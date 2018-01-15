@@ -134,6 +134,12 @@
         tidy2 <- complete_final %>% group_by(activity_name,subject) %>% summarize_all(funs(mean))
         
         
+        #give our variables some helpful names that indicate they are now averages
+        
+        names(tidy2) [3:66] <- paste("MEAN", names(tidy2)[3:66], sep="_")
+        
 #write the table to a file
         
         write.table(tidy2, "coursera_gettingandcleaning_finalassignment_tidydata.txt", row.name=FALSE)
+        
+        
