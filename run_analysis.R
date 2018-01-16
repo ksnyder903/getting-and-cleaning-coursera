@@ -137,6 +137,11 @@
         #give our variables some helpful names that indicate they are now averages
         
         names(tidy2) [3:66] <- paste("MEAN", names(tidy2)[3:66], sep="_")
+
+        names(tidy2) <- sub("-", "_", names(tidy2))
+        names(tidy2) <- sub("\\(", "", names(tidy2))
+        names(tidy2) <- sub("\\)", "", names(tidy2))
+        names(tidy2) <- sub("-", "_", names(tidy2))
         
 #write the table to a file
         
